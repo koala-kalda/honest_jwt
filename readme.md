@@ -1,7 +1,7 @@
-Frank JWT [![Build Status](https://travis-ci.org/GildedHonour/frank_jwt.svg)](https://travis-ci.org/GildedHonour/frank_jwt) [![crates.io](https://img.shields.io/crates/v/frank_jwt.svg)](https://crates.io/crates/frank_jwt)
-================================================
+Honest JWT Library
+==================
 
-Implementation of [JSON Web Tokens](http://jwt.io) in Rust.
+Implementation of [JSON Web Tokens](http://jwt.io) in Rust. Honest about its feature set and actively maintained. Support for all claim checks and JWEs is a goal. Fork of [frank_jwt](https://github.com/GildedHonour/frank_jwt).
 
 ## Algorithms and features supported
 - [x] HS256
@@ -15,13 +15,13 @@ Implementation of [JSON Web Tokens](http://jwt.io) in Rust.
 - [x] ES512
 - [x] Sign
 - [x] Verify
-- [x] iss (issuer) check
-- [x] sub (subject) check
-- [x] aud (audience) check
-- [x] exp (expiration time) check
-- [x] nbf (not before time) check
-- [x] iat (issued at) check
-- [x] jti (JWT id) check
+- [ ] iss check (issuer)
+- [ ] sub check (subject)
+- [ ] aud check (audience)
+- [ ] exp check (expiration time)
+- [ ] nbf check (not before time)
+- [ ] iat check (issued at)
+- [ ] jti check (JWT id)
 
 ## Usage
 
@@ -29,20 +29,19 @@ Put this into your `Cargo.toml`:
 
 ```toml
 [dependencies]
-frank_jwt = "<current version of frank_jwt>"
+honest_jwt = "0.1"
 ```
 
 And this in your crate root:
 
 ```rust
-extern crate frank_jwt;
+extern crate honest_jwt;
 extern crate  #[macro_use] serde_json;
 
-use frank_jwt::{Algorithm, encode, decode};
+use honest_jwt::{Algorithm, encode, decode};
 ```
 
 ## Example
-
 ```rust
 //HS256
 let mut payload = json!({
@@ -69,16 +68,4 @@ let (header, payload) = decode(&jwt, &keypath.to_path_buf(), Algorithm::RS256);
 ```
 
 ## License
-
-Apache 2.0
-
-## Tests
-
-```shell
-cargo test
-```
-
-## I'm available for hire
-I'm a freelance developer and looking forward to new challenges.
-
-me@gildedhonour.com | gildedhonour.com
+Original project code ([frank_jwt](https://github.com/GildedHonour/frank_jwt)) was licensed under the [Apache 2.0](legal/apache-v2.0.md) license. New code is being written under the [LGPL 3.0](legal/gnu-lgpl-v3.0.md). Eventually all original code will be re-rewitten and entire project will be LGPL'd.

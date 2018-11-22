@@ -1,13 +1,2 @@
-*.sublime-project
-*.sublime-workspace
-*.o
-*.so
-*.rlib
-*.dll
-*.exe
-/target
 .DS_Store
-tmp
 Cargo.lock
-1.txt
-*.swp
